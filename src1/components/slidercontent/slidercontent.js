@@ -78,11 +78,11 @@ const ImageOnly = ({ imageonlycontent }) => {
       <Grid
         container
         spacing={2}
-        direction={"row"}
+        direction={"column"}
         sx={{ justifyContent: "center", mt: 1 }}
       >
         {imageonlycontent[currentIndex] ? (
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={5}>
             <ImageCard
               {...imageonlycontent[currentIndex]}
               index={currentIndex}
@@ -90,7 +90,7 @@ const ImageOnly = ({ imageonlycontent }) => {
           </Grid>
         ) : null}
         {imageonlycontent[currentIndex + 1] ? (
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={5}>
             <ImageCard
               {...imageonlycontent[currentIndex + 1]}
               index={currentIndex}
@@ -172,16 +172,16 @@ const TextOnly = ({ textonlycontent }) => {
       <Grid
         container
         spacing={2}
-        direction={"row"}
+        direction={"column"}
         sx={{ justifyContent: "center", mt: 1 }}
       >
         {textonlycontent[currentIndex] ? (
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={5}>
             <TextCard {...textonlycontent[currentIndex]} index={currentIndex} />
           </Grid>
         ) : null}
         {textonlycontent[currentIndex + 2] ? (
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={5}>
             <TextCard
               {...textonlycontent[currentIndex + 2]}
               index={currentIndex}
@@ -194,22 +194,10 @@ const TextOnly = ({ textonlycontent }) => {
 };
 
 const SliderContent = ({ slidercontent }) => {
-  const { sectionTitle, contentType } = slidercontent;
+  const { contentType } = slidercontent;
 
   return (
     <Container maxWidth={"lg"} sx={{ mt: 10 }}>
-      <Typography
-        sx={{
-          fontFamily: "Wix Madefor Display",
-          fontWeight: 900,
-          fontSize: 40,
-          color: "#03045e",
-          textAlign: "center",
-        }}
-      >
-        {sectionTitle}
-      </Typography>
-
       {contentType === "text" ? (
         <TextOnly textonlycontent={slidercontent.tiles} />
       ) : (

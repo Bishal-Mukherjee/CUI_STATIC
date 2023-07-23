@@ -9,12 +9,11 @@ import {
 // import { Helmet } from "react-helmet-async";
 import Carousel from "./carousel/carousel";
 import Products from "./products/products";
-import Article from "./article/article";
 import Form from "./form/form";
 import Content from "./content/content";
 import SliderContent from "./slidercontent/slidercontent";
 import Footer from "./footer/footer";
-// import NotFound from "../assets/svg/404.svg";
+import NotFound from "../assets/images/Not_found.png";
 
 const LiveSection = ({ mainObj }) => {
   return (
@@ -27,9 +26,9 @@ const LiveSection = ({ mainObj }) => {
               <Products addedproducts={mainObj.products} />
             ) : null}
             <Grid container spacing={2} sx={{ mt: 3 }}>
-              {mainObj.article ? (
+              {mainObj.slidercontent ? (
                 <Grid item xs={12} md={6}>
-                  <Article article={mainObj.article} />
+                  <SliderContent slidercontent={mainObj.slidercontent} />
                 </Grid>
               ) : null}
 
@@ -40,9 +39,6 @@ const LiveSection = ({ mainObj }) => {
               ) : null}
             </Grid>
             {mainObj.content ? <Content content={mainObj.content} /> : null}
-            {mainObj.slidercontent ? (
-              <SliderContent slidercontent={mainObj.slidercontent} />
-            ) : null}
           </>
         ) : (
           <Box
@@ -53,8 +49,11 @@ const LiveSection = ({ mainObj }) => {
               alignItems: "center",
             }}
           >
-            <Typography>Preview unavailable!</Typography>
-            <FormHelperText>Add content to view</FormHelperText>
+            <img
+              alt="not_found"
+              src={NotFound}
+              style={{ width: 100, height: 100 }}
+            />
           </Box>
         )}
       </Container>

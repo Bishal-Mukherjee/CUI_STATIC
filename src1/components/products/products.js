@@ -50,7 +50,7 @@ const Products = ({ addedproducts }) => {
   const { products } = addedproducts;
 
   return (
-    <Container maxWidth sx={{ mt: 2 }}>
+    <Container maxWidth sx={{ mt: 5 }}>
       <Grid sx={{ mt: 1, justifyContent: "center" }} container spacing={2}>
         {products ? (
           <>

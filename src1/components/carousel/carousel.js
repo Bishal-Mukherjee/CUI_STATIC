@@ -50,7 +50,7 @@ const Carousel = ({ carousel }) => {
           <a href={slides[imageIndex]?.link}>
             <motion.img
               key={page}
-              src={slides[imageIndex]?.image}
+              src={slides[imageIndex].image}
               custom={direction}
               variants={variants}
               initial="enter"
@@ -63,7 +63,7 @@ const Carousel = ({ carousel }) => {
               dragElastic={1}
               style={{
                 marginTop: 30,
-                height: 430,
+                height: 450,
                 width: "100%",
                 borderRadius: 5,
               }}
